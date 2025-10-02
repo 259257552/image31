@@ -27,7 +27,7 @@ image = data.coins()[50:-50, 50:-50]
 
 # apply threshold
 thresh = threshold_otsu(image)
-bw = closing(image > thresh, footprint_rectangle((7, 7)))
+bw = closing(image > thresh, footprint_rectangle((3, 3)))
 
 # remove artifacts connected to image border
 cleared = clear_border(bw)
@@ -43,7 +43,7 @@ ax.imshow(image_label_overlay)
 
 for region in regionprops(label_image):
     # take regions with large enough areas
-    if region.area >= 100:
+    if region.area >= 50:
         # draw rectangle around segmented coins
         minr, minc, maxr, maxc = region.bbox
         rect = mpatches.Rectangle(
