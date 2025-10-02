@@ -27,7 +27,7 @@ image = data.coins()[50:-50, 50:-50]
 
 # apply threshold
 thresh = threshold_otsu(image)
-bw = closing(image > thresh, footprint_rectangle((3, 3)))
+bw = closing(image > thresh, footprint_rectangle((15, 15)))
 
 # remove artifacts connected to image border
 cleared = clear_border(bw)
