@@ -51,8 +51,8 @@ for region in regionprops(label_image):
             maxc - minc,
             maxr - minr,
             fill=False,
-            edgecolor='red',
-            linewidth=2,
+            edgecolor='blue',
+            linewidth=3,
         )
         ax.add_patch(rect)
 
